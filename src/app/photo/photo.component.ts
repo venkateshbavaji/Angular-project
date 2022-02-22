@@ -13,7 +13,7 @@ export class PhotoComponent implements OnInit {
 
 
 lstphoto: photoModel[]=[];
-p:number=1;
+p:number=2;
 APIBaseUrl: string ='https://jsonplaceholder.typicode.com/photos';
 title:string = 'Create a post';
 photoModel = new photoModel();

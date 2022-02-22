@@ -19,7 +19,7 @@
             </tr>
         </thead>
             <tbody>
-                <tr *ngFor="let photo of lstphoto| paginate: { itemsPerPage: 5, currentPage: p }">
+                <tr *ngFor="let photo of lstphoto| paginate: { itemsPerPage:3, currentPage: p }">
                     <th scope="row">{{photo.albumId}}</th>
                     <td>{{photo.id}}</td>
                     <td>{{photo.title}}</td>
