@@ -1,0 +1,89 @@
+ 
+<div class="card componentStyle">
+    <div class="form-group" style="text-align:right;">
+  <a (click)= "adduser()"data-bs-toggle="modal" data-bs-target="#mpPost" class="btn btn-primary">
+    <i class="fa-solid fa-circle-plus"></i>
+</a>  
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#Id</th>
+            <th scope="col">name</th>
+            <th scope="col">username</th>
+            <th scope="col">email</th>
+            <th scope="col">address</th>
+            <th scope="col">street</th>
+            <th scope="col">suite</th>
+            <th scope="col">city</th>
+            
+            <th scope="col">Action(s)</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr *ngFor="let user of lstuser | paginate: { itemsPerPage: 5, currentPage: p }">
+                    <th scope="row">{{user.id}}</th>
+                    <td>{{user.name}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.address}}</td>
+                    <td>{{user.street}}</td>
+                    <td>{{user.city}}</td>
+                    
+                    <td>
+
+         <button (click)="deleteuser(user.id)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+         <button (click)="edituser(user)" data-bs-toggle="modal" data-bs-target="#mpPost" type="button" class="btn btn-light"><i class="fa-solid fa-pencil"></i></button>
+     <button (click)="viewuser(user)" data-bs-toggle="modal" data-bs-target="#mpPost" type="button"class="btn btn-info"><i class="fa-solid fa-eye"></i></button> 
+                    </td>
+                    </tr>
+                    </tbody>
+                    <tr>
+                        <td  class="text-center" colspan="8">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </td>
+                    </tr>
+                    </table>
+
+<div class="modal fade" id="mpPost" tabindex="-1" aria-labelledby="mpPostTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="mpPostTitle">{{title}}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div *ngIf="alertmessage" class="alert alert-success" role="alert">
+                          {{alertmessage}}
+                      </div>
+                      <div class="form-group">
+ <label for="txtId" class="col-form-label">Id</label> 
+ <input name="txtId" [disabled]="title =='view a user'" [(ngModel)]="userModel.id" type="number" class="form-control" id="txtId">
+                      </div>
+                      <div class="form-group">
+         <label for="txtname" class="col-form-label">name</label>
+<input name="txtname" [disabled]="title =='view a user'" [(ngModel)]="userModel.name" type="text" class="form-control" id="txtname">
+          </div>
+          <div class="form-group">
+            <label for="txtusername" class="col-form-label">username</label>
+ <input name="txtusername"[disabled]="title =='view a user'"  [(ngModel)]="userModel.username" type="text" class="form-control" id="txtusername">
+         </div> 
+         <div class="form-group">
+            <label for="txtemail" class="col-form-label">email</label>
+ <input name="txtemail"[disabled]="title =='view a user'"  [(ngModel)]="userModel.email" type="text" class="form-control" id="txtemail">
+         </div>
+        </form>
+              <div class="modal-footer"> 
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" (click)="saveuserDetail()" [hidden]="title =='view a user'" class="btn btn-primary">Save</button>
+              </div>
+          </div>
+      </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,67 @@
+  
+ <table style="margin: auto;width: 1000px;">
+<div class="card">
+    <form [formGroup]="registerForm">
+
+        <div class="card-header text-center">
+            <b>{{title}}</b>
+            </div>
+        
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtcandidatename" class="form-label">candidatename</label>
+            <input formControlName="candidatename" id="txtcandidatename" type="text" class="form-control">
+            <div *ngIf="candidatename.touched && candidatename.invalid"  class="aert alert-danger">
+                     please enter candidatename....!
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="txtfathername" class="form-label">Fathername</label>
+                <input formControlName="fathername" id="txtfathername" type="text" class="form-control">
+                <div *ngIf="fathername.touched && fathername.invalid" class="alert alert-danger">
+                        please enter fathername....!
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label for="txtdateofbirth" class="form-label">Dateofbirth</label>
+                <input formControlName="dateofbirth" id="txtdateofbirth" type="text" class="form-control">
+                <div *ngIf="dateofbirth.touched && dateofbirth.invalid" class="alert alert-danger">
+                        please enter dateofbirth....!
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtaddress" class="form-label">Address</label>
+                    <input formControlName="address" id="txtaddress" type="text" class="form-control">
+                    <div *ngIf="address.touched && address.invalid" class="alert alert-danger">
+                            please enter address...!
+                        </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="txtemail" class="form-label">Email address</label>
+                    <input formControlName="emailaddress" id="txtemailaddress" type="text" class="form-control">
+                    <div *ngIf="emailaddress.touched && emailaddress.invalid" class="alert alert-danger">
+                            please enter emailaddress....!
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtmobilenumber" class="form-label">Mobilenumber</label>
+                        <input formControlName="mobilenumber" id="txtmobilenumber" type="text" class="form-control">
+                        <div *ngIf="mobilenumber.touched && mobilenumber.invalid" class="alert alert-danger">
+                                please enter password....!
+                            </div>
+                            </div>
+                    <div class="form-group">
+                        <label for="txtpassword" class="form-label">password</label>
+                    <input formControlName="password" id="txtpassword" type="text" class="form-control">
+                    <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+                            please enter password....!
+                        </div>
+                        </div>
+                     
+                        <div class="card-footer text-muted tet-center">
+                            <button type="button" (click)="register()" class="btn btn-primary">submit</button>
+                        </div>
+                    </div>
+                  </form>
+            </div>
+ </table>

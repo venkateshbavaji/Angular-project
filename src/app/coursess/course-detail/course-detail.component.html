@@ -1,0 +1,100 @@
+<!-- 
+<table style="margin: auto;">
+<tr>
+
+<td style="width:500px;">
+    <div class="card">
+        <div class="card-header text-center">
+        <b>course details</b>
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="txtname">name</label>
+            <input type="text" id="txtname" readonly[value]="courseModel.name" class="form-control">
+        </div>
+            <div class="form-group">
+                <label for="txtFacultyname">Facultyname</label>
+                <input type="text" id="txtFacultyname" readonly[value]="courseModel.Facultyname" class="form-control">
+    
+            </div>
+                <div class="form-group">
+                    <label for="txtduration">Duration</label>
+                    <input type="text" id="txtduration" readonly[value]="courseModel.Duration" class="form-control">
+        
+                </div>
+                    <div class="form-group">
+                        <label for="txtrating">rating</label>
+                        <input type="text" id="txtrating" readonly[value]="courseModel.rating" class="form-control">
+            
+                    </div>iv>
+                
+                <div class="form-group">
+                    <label for="txtfee">name</label>
+                    <input type="text" id="txtfee" readonly[value]="courseModel.fee" class="form-control">
+        
+                
+            </div>
+            <div class="form-group">
+                <label for="txtreleasedate">releasedate</label>
+                <input type="text" id="txtreleasedate" readonly[value]="courseModel.releasedate" class="form-control">
+    
+            </div>
+        </div>
+        <div class="card-footer text-muted text-center">
+            <button type="button" class="btn btn-secondary"></button>
+
+        </div>
+
+                </div>
+           </td>
+      </tr>
+</table> -->
+
+    
+ 
+ 
+<table style="margin: auto;">
+    <div style='width:1200px'>
+    <div style='margin-left: 30%;'>
+     <h2 style="text-align: center;">course information</h2>
+   <div class="card-group">
+ <label for="txtname" >Name</label>
+ <input type="text" id="txtname" readonly [value]="courseModel.name | uppercase " class="form-control">
+</div>
+<div class="card-group">
+<label for="txtFacultyname">Facultyname</label>
+<input type="text" id="txtfacultyname" readonly [value]="courseModel.facultyname | uppercase"class="form-control">
+   </div>
+   <div class="card-group">
+    <label for="txtdicription">Discription</label>
+    <textarea [value]="courseModel.discription"></textarea>
+    <input type="text" id="txtdiscription" readonly [value]="courseModel.discription |uppercase |summary :10" class="form-control">
+        </div>
+<div class="card-group">
+<label for="txtduration">Duration</label>
+<input type="text" id="txtduration" readonly [value]="courseModel.duration" class="form-control">
+    </div>
+   <div class="card-group">
+    <label for="txtrating">Rating</label>
+    <input type="text" id="txtrating" readonly [value]="courseModel.rating" class="form-control">
+    </div>
+     <div class="card-group">
+        <label for="txtfee">Fee</label>
+        <input type="text" id="txtfee" readonly [value]="courseModel.fee | currency:'INR' " class="form-control">
+         </div>
+         <div class="card-group">
+            <label for="txtreleasedate">Releasedate</label>
+            <input type="text" id="txtreleasedate" readonly [value]="courseModel.releasedate | date:'short'"class="form-control">
+             </div>
+         <div class="card-group">
+       <div style="margin-left: 40%;">
+       <button type="button" class="btn btn-info">register</button>
+    </div>
+    </div>
+    </div> 
+    
+
+
+
+    
+    

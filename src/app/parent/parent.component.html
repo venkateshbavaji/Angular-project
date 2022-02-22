@@ -1,0 +1,14 @@
+ <table style="margin: auto;width: 800px;">
+
+
+<div class="card ComponentStyle">
+    <app-child-out (newItemEvent)="addItem($event)"></app-child-out>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let fruit of fruits">
+            
+            <app-child [nameOftheFruit]="fruit"></app-child>
+        </li>
+
+    </ul>
+</div>
+  </table> 

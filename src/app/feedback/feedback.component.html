@@ -1,0 +1,51 @@
+ 
+      <table style="margin: auto;width: 800px;">
+
+                  
+                   <div style='width: 820px;'>
+                       
+             
+                 <div class="card">
+              <div class=" card-header text-center">
+            <h6>{{title}}</h6>
+        </div>
+        
+         <div class="form-control">
+       <label for="txtfacultyname" class="form-control">facultyname</label>
+       <input  #txtfacultyname="ngModel" required ngModel name="txtfacultyname" id="txtfacultyname" type="text" class="form-control">
+       <div *ngIf="txtfacultyname.touched && txtfacultyname.invalid">
+                   
+      </div>
+         </div>
+         <div class="form-control">
+            <label for="txtDepatment" class="form-control">Department</label>
+            <input #txtdepartment="ngModel" required ngModel id="txtDepatment"name="txtDepartment" type="text" class="form-control">
+            <div *ngIf="txtfacultyname.touched && txtfacultyname.invalid">
+                </div>
+              </div>
+              <div class="form-control">
+                <label for="txtDesignation" class="form-control">designation</label>
+                <input type="txtDesignation" id="txtDesignation"name="txtDesignation" type="text" class="form-control">
+                  </div>
+                  <div class="form-control">
+                    <label for="txtDate of joining" class="form-control">Date of joining</label>
+                    <input type="txt Date of joining" id="txtDate of joining"name="txtdate of joining" type="text" class="form-control">
+                      </div>
+                      <div class="form-control">
+                        <label for="txtname of the subject" class="form-control">name of the subject & Lab</label>
+                        <input type="txtname of the subject" id="txtnameof the subject"name="txtname of the subject" type="text" class="form-control">
+                          </div>
+                          <div class="form-control">
+                            <label for="txtsyllabus" class="form-control">Syllabus cover</label>
+                            <input type="txtsyllabus" id="txtsyllabus"name="txtsyllabus" type="text" class="form-control">
+                              </div>
+                                  </div> <div class="form-control">
+                                        <label class="form-lable" for="txtmessage"> Do you want to give any suggestion</label>
+                                        <textarea class="form-control" cols="1" rows="2" id="txtmessage"></textarea>
+                                        <div  class="form-control">
+                                            <button type="button"  class="btn btn-primary">Submit</button> 
+                                        </div>
+
+    </div>
+    </div>
+     

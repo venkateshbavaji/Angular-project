@@ -1,0 +1,99 @@
+<div class="card componentStyle">
+    <div class="form-group" style="text-align:right;">
+        <a (click)= "addPost()"data-bs-toggle="modal" data-bs-target="#mpPost" class="btn btn-primary">
+            <i class="fa-solid fa-circle-plus"></i>
+        </a> 
+
+
+      </div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#Id</th>
+            <th scope="col">postId</th>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">email</th>
+             <th scope="col">Action(s)</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr *ngFor="let comment of lstcomment| paginate: { itemsPerPage: 5, currentPage: p }">
+                    <th scope="row">{{comment.postId}}</th>
+                    <td>{{comment.id}}</td>
+                    <td>{{comment.name}}</td>
+                    <td>{{comment.email}}</td>
+                    <td>
+                    <button (click)="deletepost(comment.id)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>&nbsp;
+     <button (click)="editPost(comment)" data-bs-toggle="modal" data-bs-target="#mpPost" type="button" class="btn btn-success"><i class="fa-solid fa-pencil"></i></button>&nbsp;
+ <a [routerLink]="['/comment', comment.id]" [queryParams]="{postId:comment.postId,name:comment.name}"class="btn btn-light"><i class="fa-solid fa-eye"></i></a>&nbsp;
+      
+                    </td>
+                    </tr>
+                    </tbody>
+                     <tr>
+                        <td class="text-center" colspan="5">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+                        </td>
+                    </tr>  
+</table>
+<div class="modal fade" id="mpPost" tabindex="-1" aria-labelledby="mpPostTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="mpPostTitle">{{title}}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                    <div *ngIf="alertmessage" class="alert alert-success" role="alert">
+                        {{alertmessage}}
+                    </div>
+                    
+                    
+<div class="form-group">
+<label for="txtpostId" class="col-form-label">postId</label> 
+<input name="txtpostId" [disabled]="title =='view a comment'" [(ngModel)]="commentModel.postId" type="number" class="form-control" id="txtpostId">
+                    </div>
+                    <div class="form-group">
+       <label for="txtid" class="col-form-label">id</label>
+
+       <input name="txtid" [disabled]="title =='view a comment'"  [(ngModel)]="commentModel.id" type="text" class="form-control" id="txtid">
+        </div>
+        <div class="form-group">
+          <label for="txtname" class="col-form-label">name</label>
+ <input name="txtname" [disabled]="title =='view a comment'" [(ngModel)]="commentModel.name" type="text" class="form-control" id="txtname">
+        </div>
+        <div class="form-group">
+    <label for="txtemail" class="col-form-label">email</label>
+   <input name="txtemail" [disabled]="title =='view a comment'" [(ngModel)]="commentModel.email" type="text" class="form-control" id="txtemail">
+         </div>
+         <div class="form-group">
+            <label for="txtbody" class="col-form-label">body</label>
+           <input name="txtbody" [disabled]="title =='view a comment'" [(ngModel)]="commentModel.body" type="text" class="form-control" id="txtbody">
+                 </div>
+
+          </form>
+                <div class="modal-footer"> 
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button"(click)="savePostDetail()" [hidden]="title =='view a comment'" class="btn btn-primary">Save</button>
+              </div>
+          </div>
+      </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+ 
+
+  
+                    
+            

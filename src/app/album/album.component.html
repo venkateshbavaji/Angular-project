@@ -1,0 +1,85 @@
+ 
+<div class="card componentStyle">
+    <div class="form-group" style="text-align:right;">
+  <a (click)= "addalbum()"data-bs-toggle="modal" data-bs-target="#mpPost" class="btn btn-primary">
+    <i class="fa-solid fa-circle-plus"></i>
+</a>  
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#userId</th>
+            <th scope="col">Id</th>
+            <th scope="col">title</th>
+            
+            
+            <th scope="col">Action(s)</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr *ngFor="let album of lstalbum | paginate: { itemsPerPage: 5, currentPage: p }">
+                    <th scope="row">{{album.userId}}</th>
+                    <td>{{album.id}}</td>
+                    <td>{{album.title}}</td>
+                
+                    <td>
+         <button (click)="deletealbum(album.id)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+         <button (click)="editalbum(album)" data-bs-toggle="modal" data-bs-target="#mpPost" type="button" class="btn btn-light"><i class="fa-solid fa-pencil"></i></button>
+     <a [routerLink]="['/album',album.id]"[queryParams]="{id:album.id, title:album.title}"class="btn btn-light"><i class="fa-solid fa-eye"></i></a> 
+                    </td>
+                    </tr>
+                    </tbody>
+                    <tr>
+                        <td class="text-center" colspan="4">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+                        </td>
+                    </tr>
+                    </table>
+
+<div class="modal fade" id="mpPost" tabindex="-1" aria-labelledby="mpPostTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="mpPostTitle">{{title}}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div *ngIf="alertmessage" class="alert alert-success" role="alert">
+                          {{alertmessage}}
+                      </div>
+                      <div class="form-group">
+ <label for="txtalbumId" class="col-form-label">userId</label> 
+ <input name="txtalbumId" [disabled]="title =='view a album'" [(ngModel)]="albumModel.userId" type="number" class="form-control" id="txtalbumId">
+                      </div>
+    <div class="form-group">
+    <label for="txtId" class="col-form-label">Id</label> 
+ <input name="txtId" [disabled]="title =='view a album'" [(ngModel)]="albumModel.id" type="number" class="form-control" id="txtId">
+                                             </div>
+            <div class="form-group">
+        <label for="txttitle" class="col-form-label">title</label> 
+        <input name="txttitle" [disabled]="title =='view a album'" [(ngModel)]="albumModel.title" type="text" class="form-control" id="txttitle">
+             </div>
+            </form>
+              
+              <div class="modal-footer"> 
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" (click)="savealbumDetail()"[hidden]="title =='view  a album'" class="btn btn-primary">Save</button>
+              </div>
+          </div>
+      </div>
+</div>
+
+
+
+
+
+
+
+
+ 
+
+  
+

@@ -1,0 +1,68 @@
+  
+      
+         
+                  <table style="margin: auto;">
+           
+           
+           
+       
+       
+        <div style='width: 820px;'>
+           <div style='margin-left: 2%;'>
+            
+          <div class="card">
+        <div class=" card-header text-center">
+           <h2>{{title}}</h2>
+       </div>
+       
+        <div class="form-control">
+     <label for="txtstudentname"class="form-lable">studentname</label>
+ <input #txtstudentname="ngModel" required ngModel name="txtstudentname" id="txtstudentname" name="txtstudentname" type="text" class="form-control">
+ <div *ngIf="txtstudentname.touched && txtstudentname.invalid" class="alert alert-danger" role="alert">
+  student name is required....! 
+</div>
+
+ <div class="form-control">
+  <label for="txtfathername"class="form-lable">fathername</label>
+<input  #txtfathername="ngModel" required ngModel name="txtfathername" id="txtfathertname" name="txtfathername" type="text" class="form-control">
+</div>
+<div class="form-control">
+  <label for="txthallticket number"class="form-lable">Hallticketnumber</label>
+<input #txthallticketnumber="ngModel" required ngModel name="txthallticketnumber"  id="txthallticketnumber" name="txthallticket" type="text" class="form-control">
+</div>
+<div class="form-control">
+  <label for="txtcollegename"class="form-lable">collegename</label>
+<input #txtcollegename="ngModel" required ngModel name="txtcollegename"  id="txtcollegename" name="txtcollegename" type="text" class="form-control">
+</div>      <div class="form-control">
+  <label for="txtDepatment"class="form-lable">Department</label>
+<input  #txtDepartment="ngModel" required ngModel name="txtDepatment" id="txtDepatment" name="txtDepatment" type="text" class="form-control">
+</div>
+ <div class="form-control">
+<label for="txtAdharnumber"class="form-lable">Adharnumber</label>
+ <input  #txtadharnumber="ngModel" required ngModel name="txtadharnumber" id="txtAdharnumber" name="txtAdharnumber"type="text" class="form-control">
+ </div>
+ <div class="form-control">
+  <label for="txtmobilenumber"class="form-lable">mobilenumber</label>
+<input #txtmobilenumber="ngModel" required ngModel name="txtmobilenumber"  id="txtmobilenumber" name="txtmobilenumber" type="text" class="form-control">
+</div>
+ <div class="form-control">
+     <div class="card-footer text-muted text-center">
+ <button type="button" class="btn btn-primary">verify</button>
+</div>
+</div>
+       
+</div>
+<div>
+
+</div>
+
+       
+          
+          
+      
+      
+
+    
+
+      
+            -->

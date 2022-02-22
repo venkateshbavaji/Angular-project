@@ -1,0 +1,266 @@
+  <!--  <h1>{{title}}</h1>
+<h1 [textContent]="title"></h1>
+<button type="button" class="btn btn-venkatesh">venkatesh</button>
+<br>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+
+
+<input class="form-control" type="text" [value]="title">
+
+<table border='1'>
+    <tr>
+        <td [attr.colspan]="colspan">
+           <b> STUDENT INFORMATION</b>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            #S.NO
+        </th>
+        <th>
+            NAME OF CANDIDATE
+        </th>
+        <th>
+           EMAIL ADDRESS
+        </th>
+        <th>
+            MOBILENUMBER
+        </th>
+    </tr>
+    <tr>
+        <td>
+             1
+        </td>
+        <td>
+        venkatesh
+        </td>
+        <td>
+            bavajivenkatesh307@gmail.com
+        </td>
+        <td>
+            6303428439
+        </td>
+    </tr>
+    <tr>
+        <td>
+            2
+        </td>
+        <td>
+            shivakumar
+        </td>
+        <td>
+            shiva2113@gmail.com
+        </td>
+        <td>
+            9010550722
+        </td>
+    </tr>
+    <tr>
+        <td>
+            3
+        </td>
+        <td>
+            ashokkumar
+        </td>
+        <td>
+            perkaashokumar143@gmail.com
+        </td>
+        <td>
+            6521478965
+        </td>
+    </tr>
+</table>
+<img heigh=200px width=200px src="{{imgUrl}}">
+<br>
+<img heigh=200px width=200px [src]="imgUrl"> -->
+
+     <!-- <table style="margin: auto;">
+        <div class="card">
+
+        <div class=" card-header text-center">
+        
+            <h2>{{title}}</h2>
+       </div>
+    <div class="card-body">
+    
+   <div class="form-control">
+     <label for="txtemail"class="form-lable">Email address</label>
+ <input [(ngModel)]="emailaddress" id="txtEmail" name="txtEmail" type="text" class="form">
+ </div>
+ <div class="form-control">
+<label for="txtpassword"class="form-lable">password</label>
+ <input [(ngModel)]="password" id="txtpassword" name="txtpassword"type="password" class="form">
+ </div>
+ <div class="form-control">
+    <label for="txtmobilenumber"class="form-lable">mobilenumber</label>
+     <input [(ngModel)]="mobilenumber" id="txtmobilenumber" name="txtmobilenumber"type="text" class="form">
+     </div>
+ <div class="form-control">
+     <div class="card-footer text-muted text-center">
+ <button type="button"(click)="login()"class="btn btn-primary">login</button>&nbsp;
+ <button type="button" class="btn btn-secondary">save</button>
+
+ </div>
+</div>
+</div>
+        </div>    
+    </table> -->
+
+  <!-- <h2>angular class binding</h2>
+   <h2 class="textcolor">angular property binding</h2>
+   <h2 [class.textstyles]="required">angular conditional binding</h2>
+   <h2 [ngClass]="group">angular multiple class binding</h2> -->
+
+    <!-- <h2>fornt end developer</h2>
+   <h2 [style.color]="'blue'">angular style binding</h2>
+   <h2 [style.color]="mycolor">angular property binding</h2>
+   <h2 [style.color]="required ? 'blue':'red'">angular conditional binding</h2>
+   <h2 [ngStyle]="mystyles">angular multiple colors binding</h2> -->
+
+
+       <!-- <div style="text-align: center;color:darkorange;font-size: xx-large;">{{topic}}</div>
+   <hr style="width: 300px;color:blueviolet;height: 2px;margin: auto;">
+      <table style="margin: auto;width: 1000px;">
+       <tr>
+           <td>
+               <ul>
+                 <li>
+                       
+    <a [ngClass]= "{'active' : viewMode=='home','current':viewMode=='home'}"
+                    (click)="viewMode='home'">Home</a>
+                 </li>
+                 <li>
+                 <a [ngClass]= "{'active' : viewMode=='app-parent','current':viewMode=='app-parent'}"
+                    (click)="viewMode='app-parent'">input-output</a>
+                 </li>
+                    <li>
+                 <a [ngClass]= "{'active' : viewMode=='app-post','current':viewMode=='app-post'}"
+                    (click)="viewMode='app-post'">post</a>
+                 </li>
+                    <li>
+                 <a [ngClass]= "{'active' : viewMode=='app-comment','current':viewMode=='app-comment'}"
+                    (click)="viewMode='app-comment'">Comment</a>
+                 </li>
+                 <li>
+                    <a [ngClass]= "{'active' : viewMode=='app-album','current':viewMode=='app-album'}"
+                       (click)="viewMode='app-album'">album</a>
+                    </li>
+                      <li>
+                 <a [ngClass]= "{'active' : viewMode=='app-photo','current':viewMode=='app-photo'}"
+                    (click)="viewMode='app-photo'">Photo</a>
+                 </li>
+                 <li>
+                    <li>
+                        <a [ngClass]= "{'active' : viewMode=='app-todo','current':viewMode=='app-todo'}"
+                           (click)="viewMode='app-todo'">Todos</a>
+                        </li>
+                        <li>
+                    <a [ngClass]= "{'active' : viewMode=='app-user','current':viewMode=='app-user'}"
+                             (click)="viewMode='app-user'">user</a>
+                  </li>         
+                  
+             </ul>
+           </td>
+       </tr>
+   </table>
+   <router-outlet></router-outlet>
+    <div [ngSwitch]="viewMode">
+       <div *ngSwitchCase= "'home'">
+           <home></home>
+            </div>
+            <div *ngSwitchCase= "'app-parent'">
+           <app-parent></app-parent>
+            </div>
+             <div *ngSwitchCase= "'app-post'">
+           <app-post></app-post>
+            </div>
+             <div *ngSwitchCase= "'app-comment'">
+           <app-comment></app-comment>
+            </div>
+              <div *ngSwitchCase= "'app-photo'">
+           <app-photo></app-photo>
+            </div>
+               <div *ngSwitchCase= "'app-todo'">
+           <app-todo></app-todo>
+            </div>
+            <div *ngSwitchCase= "'app-album'">
+                <app-album></app-album>
+                 </div>
+                 <div *ngSwitchCase= "'app-user'">
+                    <app-user></app-user>
+                     </div -->
+
+
+             
+
+
+                     <div style="text-align: center;color:darkorange;font-size: xx-large;">{{topic}}</div>
+                     <hr style="width: 300px;color:blueviolet;height: 2px;margin: auto;">
+                        <table style="margin: auto;width: 1200px;">
+                         <tr>
+                             <td>
+                                 <ul>
+                                    <li>
+                                         
+                     <a [routerLinkActive]="'active'" [routerLink]="'/home'">Home</a>
+                                           </li>
+                                   <li>
+                                         
+                          <a [routerLinkActive]="'active'" [routerLink]="'/login'">login</a>
+                                   </li>
+                                   <li>
+                                         
+                                    <a [routerLinkActive]="'active'" [routerLink]="'/registration'">registration</a>
+                                       </li>
+                                       
+                                   <li>
+                                   <a [routerLinkActive]="'active'"   [routerLink]="'/parent'">input-output</a>
+                                   </li>
+                                      <li>
+                                   <a [routerLinkActive]="'active'"   [routerLink]="'/post'">post</a>
+                                   </li>
+                                      <li>
+                                   <a  [routerLinkActive]="'active'" [routerLink]="'/comment'">Comment</a>
+                                   </li>
+                                   <li>
+                                      <a [routerLinkActive]="'active'"  [routerLink]="'/album'">album</a>
+                                      </li>
+                                        <li>
+                                   <a [routerLinkActive]="'active'"  [routerLink]="'/photo'">Photo</a>
+                                   </li>
+                                   <li>
+                                      <li>
+                                          <a [routerLinkActive]="'active'"  [routerLink]="'/todo'">Todos</a>
+                                          </li>
+                                          <li>
+                                      <a [routerLinkActive]="'active'"  [routerLink]="'/user'">user</a>
+                                    </li> 
+                                    <li>
+                                        <a [routerLinkActive]="'active'"  [routerLink]="'/admin'">Admin</a>
+                                      </li>  
+                                      <li>
+                                        <a [routerLinkActive]="'active'"  [routerLink]="'/department'">Department</a>
+                                      </li> 
+                                      <li>
+                                        <a (click)="logout()">logout</a>
+                                      </li>        
+                                
+        
+                                                
+                               </ul>
+                             </td>
+                         </tr>
+                     </table>
+                     <router-outlet></router-outlet>
+
+            
+
+     

@@ -1,0 +1,103 @@
+ <!-- <div class="card componentstyle">
+    <table class="componentstyle" style="width:auto;">
+        <tr>
+            <td>
+                <div style="text-align:right;margin-bottom:6px;">
+                    <button type="button" (click)="addInvoice()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mpInvoice">
+                     <i class="fafa-plus" aria-hidden="true"></i>addInvoice</button>
+                </div>
+                <div class="container-table100">
+              <div class="wrap-table100">
+                <div class="table100 ver1 m-b-110">
+                <div class="table100-head">
+                    <table>
+                     <thead>
+             <tr class="row100 head">
+<th class="cell100 column1">#InvoiceNumber</th>
+<th class="cell100 column2">Amount</th>
+<th class="cell100 column3">Creattedby</th>
+<th class="cell100 column4">Actions</th>
+        </tr>
+        </thead>
+        </table>
+        </div>
+<div class="table100-body js-pscroll">
+<table>
+<tbody>
+<tr class="row100 body" *ngFor="let invoice of listInvoices;index as itemindex">
+    <td class="cell100 column1">
+        {{invoice.InvoiceNumber}}
+    </td>
+    <td class="cell100 column2">
+        {{invoice.Amount | number}}
+        </td>
+        <td class="cell100 column3">
+            {{invoice.Creattedby}}
+            </td>
+            <td class="cell100 column4">
+                <button class="btn btn-info"><a [routerLink]="['/invoicelistcomponent, invoicelistcomponent.Id]"><i class="fa fa-eye" aria-hidden="true"></i></a> -->
+                    <!-- </button>&nbsp;
+
+ <button (click)="deleteInvoice(itemindex)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>&nbsp;
+                  
+<button (click)="editInvoice(invoice,itemindex)" data-bs-toggle="modal" data-bs-target="#mpPost" type="button" class="btn btn-secondary"><i class="fa-solid fa-pencil"></i></button> 
+     </td>
+     </tr>
+    </tbody>
+    </table>
+             <div class="modal fade" id="mpInvoice" tabindex="-1" aria-labelledby="invoicemodallabel" aria-hidden="true">
+                   <div class="modal-dialog modal-dialog-centered">
+                       <div class="modal-content">
+                           <div class="modal-header">
+                               <h5 class="modal-title" id="invoicemodallabel">{{modalTitle}}</h5>
+                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                           </div>
+                           <div class="modal-body">
+                               <div class="mb-3" style="text-align: left;">
+                                <div *ngIf="alertmessage" class="alert alert-success" role="alert">
+                                    {{alertmessage}}
+                                    </div>
+                                    </div>
+                                    <div class="modal-body">
+                                   <label class="form-label" for="txtInvoiceNumber">InvoiceNumber</label>
+ <input [(ngModel)]=" formData.InvooiceNumber"formControlName="invoiceNumber" class="form-control" placeholder="Enter Invoice Number" type="text" class="form-control" id="txtInvoiceNumber">
+            <div *ngIf="invoiceNumber.touched&&invoiceNumber.errors">
+                 <div *ngIf="invoiceNumber.errors['required']" class="alert alert-danger">Invoice number is required
+
+                 </div>
+                 <div *ngIf="invoiceNumber.errors['minlength']" class="alert alert-danger">
+                     minimum length is{{InvoiceNumber.errors['minlength'].requiredLength}}
+                 </div>
+                 </div>
+                 </div>
+                 <div class="mb-3" style="text-align: left;">
+                    <label class="form-label" for="txtAmount">
+                        Amount
+                     </label>
+ <input [(ngModell)] ="formData.Amount" formControlName ="Amount" class="form-control" placeholder="Enter Amount Number" type="number" class="form-control" id="txtInvoiceNumber">
+                     <div *ngIf="Amount.touched&&Amount.errors">
+<div *ngIf="Amount.errors['required']" class="alert alert-danger">Invoice Amount is required
+         
+                          </div> 
+                        </div>
+                        <div class="mb-3" style="text-align: left;">
+                           <label class="form-label" for="txtAmount">
+                               Amount
+                            </label>
+        <input [(ngModel)]="formData.Createdby" formControlName="Createdby" class="form-control" placeholder="Enter created Number" type="text" class="form-control" id="txtcreatedby">
+                            <div *ngIf="Creattedby.touched&&Createdby.errors">
+       <div *ngIf="Creattedby.errors['required']" class="alert alert-danger">Invoice  Createdby is required
+                
+                                 </div> 
+                                 </div> 
+                                 </div> 
+                 </div>  
+                           </div>  
+                           </div>
+                   </div> 
+                   </div>
+                   </div>
+                </div>
+                </div>
+                </div>
+                                       -->

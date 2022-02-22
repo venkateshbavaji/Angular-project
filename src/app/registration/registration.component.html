@@ -1,0 +1,31 @@
+<table style="margin: auto;">
+    <div class="card">
+
+    <div class=" card-header text-center">
+    
+        <h2>{{title}}</h2>
+   </div>
+<div class="card-body">
+
+<div class="form-control">
+ <label for="txtemail"class="form-lable">Email address</label>
+<input [(ngModel)]="emailaddress" id="txtEmail" name="txtEmail" type="text" class="form">
+</div>
+<div class="form-control">
+<label for="txtpassword"class="form-lable">password</label>
+<input [(ngModel)]="password" id="txtpassword" name="txtpassword"type="password" class="form">
+</div>
+<div class="form-control">
+<label for="txtmobilenumber"class="form-lable">mobilenumber</label>
+ <input [(ngModel)]="mobilenumber" id="txtmobilenumber" name="txtmobilenumber"type="mobilenumber" class="form">
+ </div>
+<div class="form-control">
+ <div class="card-footer text-muted text-center">
+<button type="button"
+[ngStyle]="{'color':isregister?'green':'red','background-color':isregister?'aqua':'yellow','border-color':isregister?'black':'teal'}"
+(click)="register()" class="btn btn-primary">register</button>
+</div>
+</div>
+</div>
+</div> 
+</table>

@@ -1,0 +1,54 @@
+
+<table style="margin: auto;width: 800px;">
+    <div class="card">
+        <div class=" card-header text-center">
+      <h6>{{tittle}}</h6>
+  </div>
+
+
+    <div class="card ComponentStyle">
+        
+        <form #contactform="ngForm">
+            <div class="form-group">
+            <label class="form-label" for="txtfirstname">firstname</label>
+            <input #txtfirstname="ngModel" required ngModel name="txtfirstname" class="form-control"  type="text" id='txtfirstname'>
+            <div *ngIf="txtfirstname.touched && txtfirstname.invalid" class="alert alert-danger" role="alert">
+                first name is required....!
+            </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="txtlastname">lastname</label>
+                <input class="form-control"  type="text" id='txtlastname'>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtemaiaddress">emailaddress</label>
+                    <input  pattern= "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"required #txtemail="ngModel" ngModel name="txtemail"class="form-control"  type="text" id='txtemaiaddress'>
+                <div *ngIf="txtemail.touched && txtemail.invalid">
+                    <div *ngIf="txtemail.errors['required']" class="alert alert-danger" role="alert">
+                        email is required...!
+                    </div>
+                          <div *ngIf="txtemail.errors['pattern']" class="alert alert-danger" role="alert">
+                          enter proper email....!
+                          </div>
+                </div>   
+                </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtmobilenumber">mobilenumber</label>
+                        <input #txtmobilenumber="ngModel" required ngModel name="txtmobilenumber" class="form-control"  type="text" id="txtmobilenumber">
+                       <div *ngIf="txtmobilenumber.touched && txtmobilenumber.invalid" class="alert alert-danger" role="alert">
+                           mobile number is required mandatory....!   
+                       </div>
+                        <div class="form-group">
+                            <label class="form-lable" for="txtmessage">message</label>
+                            <textarea class="form-control" cols="5" rows="5" id="txtmessage"></textarea>
+                            <div  class="form-group">
+                                <input style="margin: left 10px;" type="button" [disabled]="contactform.invalid" class="btn btn-primary" value="sbmit">
+                            </div>
+                            
+                            </div>
+                        </div>
+        </form>
+    </div>
+    </div>
+
+      </table> 

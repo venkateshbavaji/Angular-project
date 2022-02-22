@@ -1,0 +1,80 @@
+ 
+<div class="card componentStyle">
+    <div class="form-group" style="text-align:right;">
+  <a (click)= "addtodo()"data-bs-toggle="modal" data-bs-target="#mpPost" class="btn btn-primary">
+    <i class="fa-solid fa-circle-plus"></i>
+</a>  
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#userID</th>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">completd</th>
+            
+            <th scope="col">Action(s)</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr *ngFor="let todo of lsttodo | paginate: { itemsPerPage: 5, currentPage: p }">
+                    <th scope="row">{{todo.userId}}</th>
+                    <td>{{todo.id}}</td>
+                    <td>{{todo.title}}</td>
+                    <td>{{todo.completed}}</td>
+                    
+                    <td>
+         <button (click)="deletetodo(todo.id)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+         <button (click)="edittodo(todo)" data-bs-toggle="modal" data-bs-target="#mpPost" type="button" class="btn btn-light"><i class="fa-solid fa-pencil"></i></button>
+     <button (click)="viewtodo(todo)" data-bs-toggle="modal" data-bs-target="#mpPost" type="button"class="btn btn-info"><i class="fa-solid fa-eye"></i></button> 
+                    </td>
+                    </tr>
+                    </tbody>
+                    <tr>
+                        <td class="text-center" colspan="5">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </td>
+                    </tr>
+                    </table>
+
+<div class="modal fade" id="mpPost" tabindex="-1" aria-labelledby="mpPostTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="mpPostTitle">{{title}}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div *ngIf="alertmessage" class="alert alert-success" role="alert">
+                          {{alertmessage}}
+                      </div>
+                      <div class="form-group">
+ <label for="txtuserId" class="col-form-label">userId</label> 
+ <input name="txtuseId" [disabled]="title =='view a todo'" [(ngModel)]="todoModel.userId" type="number" class="form-control" id="txtuserId">
+                      </div>
+                      <div class="form-group">
+         <label for="txtid" class="col-form-label">ID</label>
+<input name="txtid" [disabled]="title =='view a todo'" [(ngModel)]="todoModel.id" type="text" class="form-control" id="txtid">
+          </div>
+          <div class="form-group">
+            <label for="txtTitle" class="col-form-label">title</label>
+ <input name="txttitle"[disabled]="title =='view a todo'"  [(ngModel)]="todoModel.title" type="text" class="form-control" id="txttitle">
+         </div> 
+         <div class="form-group">
+            <label for="txtcompleted" class="col-form-label">completed</label>
+ <input name="txtcompleted"[disabled]="title =='view a todo'"  [(ngModel)]="todoModel.completed" type="text" class="form-control" id="txturl">
+         </div>
+        </form>
+              <div class="modal-footer"> 
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" (click)="savePostDetail()" [hidden]="title =='view a todo'" class="btn btn-primary">Save</button>
+              </div>
+          </div>
+      </div>
+</div>
+
+
+
+
